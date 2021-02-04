@@ -1,0 +1,585 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E697A2D825CC3695009F1DDA /* ClimateCombatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E697A2D725CC3695009F1DDA /* ClimateCombatApp.swift */; };
+		E697A2DA25CC3695009F1DDA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E697A2D925CC3695009F1DDA /* ContentView.swift */; };
+		E697A2DC25CC3698009F1DDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E697A2DB25CC3698009F1DDA /* Assets.xcassets */; };
+		E697A2DF25CC3698009F1DDA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E697A2DE25CC3698009F1DDA /* Preview Assets.xcassets */; };
+		E697A2EA25CC3698009F1DDA /* ClimateCombatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E697A2E925CC3698009F1DDA /* ClimateCombatTests.swift */; };
+		E697A2F525CC3698009F1DDA /* ClimateCombatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E697A2F425CC3698009F1DDA /* ClimateCombatUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E697A2E625CC3698009F1DDA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E697A2CC25CC3695009F1DDA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E697A2D325CC3695009F1DDA;
+			remoteInfo = ClimateCombat;
+		};
+		E697A2F125CC3698009F1DDA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E697A2CC25CC3695009F1DDA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E697A2D325CC3695009F1DDA;
+			remoteInfo = ClimateCombat;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E697A2D425CC3695009F1DDA /* ClimateCombat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClimateCombat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E697A2D725CC3695009F1DDA /* ClimateCombatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimateCombatApp.swift; sourceTree = "<group>"; };
+		E697A2D925CC3695009F1DDA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E697A2DB25CC3698009F1DDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E697A2DE25CC3698009F1DDA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E697A2E025CC3698009F1DDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E697A2E525CC3698009F1DDA /* ClimateCombatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClimateCombatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E697A2E925CC3698009F1DDA /* ClimateCombatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimateCombatTests.swift; sourceTree = "<group>"; };
+		E697A2EB25CC3698009F1DDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E697A2F025CC3698009F1DDA /* ClimateCombatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClimateCombatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E697A2F425CC3698009F1DDA /* ClimateCombatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimateCombatUITests.swift; sourceTree = "<group>"; };
+		E697A2F625CC3698009F1DDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E697A2D125CC3695009F1DDA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E697A2E225CC3698009F1DDA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E697A2ED25CC3698009F1DDA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E697A2CB25CC3695009F1DDA = {
+			isa = PBXGroup;
+			children = (
+				E697A2D625CC3695009F1DDA /* ClimateCombat */,
+				E697A2E825CC3698009F1DDA /* ClimateCombatTests */,
+				E697A2F325CC3698009F1DDA /* ClimateCombatUITests */,
+				E697A2D525CC3695009F1DDA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E697A2D525CC3695009F1DDA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E697A2D425CC3695009F1DDA /* ClimateCombat.app */,
+				E697A2E525CC3698009F1DDA /* ClimateCombatTests.xctest */,
+				E697A2F025CC3698009F1DDA /* ClimateCombatUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E697A2D625CC3695009F1DDA /* ClimateCombat */ = {
+			isa = PBXGroup;
+			children = (
+				E697A2D725CC3695009F1DDA /* ClimateCombatApp.swift */,
+				E697A2D925CC3695009F1DDA /* ContentView.swift */,
+				E697A2DB25CC3698009F1DDA /* Assets.xcassets */,
+				E697A2E025CC3698009F1DDA /* Info.plist */,
+				E697A2DD25CC3698009F1DDA /* Preview Content */,
+			);
+			path = ClimateCombat;
+			sourceTree = "<group>";
+		};
+		E697A2DD25CC3698009F1DDA /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				E697A2DE25CC3698009F1DDA /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E697A2E825CC3698009F1DDA /* ClimateCombatTests */ = {
+			isa = PBXGroup;
+			children = (
+				E697A2E925CC3698009F1DDA /* ClimateCombatTests.swift */,
+				E697A2EB25CC3698009F1DDA /* Info.plist */,
+			);
+			path = ClimateCombatTests;
+			sourceTree = "<group>";
+		};
+		E697A2F325CC3698009F1DDA /* ClimateCombatUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E697A2F425CC3698009F1DDA /* ClimateCombatUITests.swift */,
+				E697A2F625CC3698009F1DDA /* Info.plist */,
+			);
+			path = ClimateCombatUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E697A2D325CC3695009F1DDA /* ClimateCombat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E697A2F925CC3698009F1DDA /* Build configuration list for PBXNativeTarget "ClimateCombat" */;
+			buildPhases = (
+				E697A2D025CC3695009F1DDA /* Sources */,
+				E697A2D125CC3695009F1DDA /* Frameworks */,
+				E697A2D225CC3695009F1DDA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ClimateCombat;
+			productName = ClimateCombat;
+			productReference = E697A2D425CC3695009F1DDA /* ClimateCombat.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E697A2E425CC3698009F1DDA /* ClimateCombatTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E697A2FC25CC3698009F1DDA /* Build configuration list for PBXNativeTarget "ClimateCombatTests" */;
+			buildPhases = (
+				E697A2E125CC3698009F1DDA /* Sources */,
+				E697A2E225CC3698009F1DDA /* Frameworks */,
+				E697A2E325CC3698009F1DDA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E697A2E725CC3698009F1DDA /* PBXTargetDependency */,
+			);
+			name = ClimateCombatTests;
+			productName = ClimateCombatTests;
+			productReference = E697A2E525CC3698009F1DDA /* ClimateCombatTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E697A2EF25CC3698009F1DDA /* ClimateCombatUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E697A2FF25CC3698009F1DDA /* Build configuration list for PBXNativeTarget "ClimateCombatUITests" */;
+			buildPhases = (
+				E697A2EC25CC3698009F1DDA /* Sources */,
+				E697A2ED25CC3698009F1DDA /* Frameworks */,
+				E697A2EE25CC3698009F1DDA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E697A2F225CC3698009F1DDA /* PBXTargetDependency */,
+			);
+			name = ClimateCombatUITests;
+			productName = ClimateCombatUITests;
+			productReference = E697A2F025CC3698009F1DDA /* ClimateCombatUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E697A2CC25CC3695009F1DDA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1220;
+				LastUpgradeCheck = 1220;
+				TargetAttributes = {
+					E697A2D325CC3695009F1DDA = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					E697A2E425CC3698009F1DDA = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = E697A2D325CC3695009F1DDA;
+					};
+					E697A2EF25CC3698009F1DDA = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = E697A2D325CC3695009F1DDA;
+					};
+				};
+			};
+			buildConfigurationList = E697A2CF25CC3695009F1DDA /* Build configuration list for PBXProject "ClimateCombat" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E697A2CB25CC3695009F1DDA;
+			productRefGroup = E697A2D525CC3695009F1DDA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E697A2D325CC3695009F1DDA /* ClimateCombat */,
+				E697A2E425CC3698009F1DDA /* ClimateCombatTests */,
+				E697A2EF25CC3698009F1DDA /* ClimateCombatUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E697A2D225CC3695009F1DDA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E697A2DF25CC3698009F1DDA /* Preview Assets.xcassets in Resources */,
+				E697A2DC25CC3698009F1DDA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E697A2E325CC3698009F1DDA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E697A2EE25CC3698009F1DDA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E697A2D025CC3695009F1DDA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E697A2DA25CC3695009F1DDA /* ContentView.swift in Sources */,
+				E697A2D825CC3695009F1DDA /* ClimateCombatApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E697A2E125CC3698009F1DDA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E697A2EA25CC3698009F1DDA /* ClimateCombatTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E697A2EC25CC3698009F1DDA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E697A2F525CC3698009F1DDA /* ClimateCombatUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E697A2E725CC3698009F1DDA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E697A2D325CC3695009F1DDA /* ClimateCombat */;
+			targetProxy = E697A2E625CC3698009F1DDA /* PBXContainerItemProxy */;
+		};
+		E697A2F225CC3698009F1DDA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E697A2D325CC3695009F1DDA /* ClimateCombat */;
+			targetProxy = E697A2F125CC3698009F1DDA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		E697A2F725CC3698009F1DDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E697A2F825CC3698009F1DDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E697A2FA25CC3698009F1DDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"ClimateCombat/Preview Content\"";
+				DEVELOPMENT_TEAM = MF2767WRK3;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = ClimateCombat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = marijnschilling.ClimateCombat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E697A2FB25CC3698009F1DDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"ClimateCombat/Preview Content\"";
+				DEVELOPMENT_TEAM = MF2767WRK3;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = ClimateCombat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = marijnschilling.ClimateCombat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E697A2FD25CC3698009F1DDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MF2767WRK3;
+				INFOPLIST_FILE = ClimateCombatTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = marijnschilling.ClimateCombatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ClimateCombat.app/ClimateCombat";
+			};
+			name = Debug;
+		};
+		E697A2FE25CC3698009F1DDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MF2767WRK3;
+				INFOPLIST_FILE = ClimateCombatTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = marijnschilling.ClimateCombatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ClimateCombat.app/ClimateCombat";
+			};
+			name = Release;
+		};
+		E697A30025CC3698009F1DDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MF2767WRK3;
+				INFOPLIST_FILE = ClimateCombatUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = marijnschilling.ClimateCombatUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ClimateCombat;
+			};
+			name = Debug;
+		};
+		E697A30125CC3698009F1DDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MF2767WRK3;
+				INFOPLIST_FILE = ClimateCombatUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = marijnschilling.ClimateCombatUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ClimateCombat;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E697A2CF25CC3695009F1DDA /* Build configuration list for PBXProject "ClimateCombat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E697A2F725CC3698009F1DDA /* Debug */,
+				E697A2F825CC3698009F1DDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E697A2F925CC3698009F1DDA /* Build configuration list for PBXNativeTarget "ClimateCombat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E697A2FA25CC3698009F1DDA /* Debug */,
+				E697A2FB25CC3698009F1DDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E697A2FC25CC3698009F1DDA /* Build configuration list for PBXNativeTarget "ClimateCombatTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E697A2FD25CC3698009F1DDA /* Debug */,
+				E697A2FE25CC3698009F1DDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E697A2FF25CC3698009F1DDA /* Build configuration list for PBXNativeTarget "ClimateCombatUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E697A30025CC3698009F1DDA /* Debug */,
+				E697A30125CC3698009F1DDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E697A2CC25CC3695009F1DDA /* Project object */;
+}
