@@ -8,9 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var viewModel = ClimateCombatViewModel()
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            Text("Amsterdam: \(viewModel.amsterdam.grade)")
+                .padding()
+            Text("Malmo: \(viewModel.malmo.grade)")
+                .padding()
+        }
+        .onAppear(perform: {
+            viewModel.getWeatherInfo()
+        })
     }
 }
 

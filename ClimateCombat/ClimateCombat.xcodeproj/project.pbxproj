@@ -13,6 +13,10 @@
 		E697A2DF25CC3698009F1DDA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E697A2DE25CC3698009F1DDA /* Preview Assets.xcassets */; };
 		E697A2EA25CC3698009F1DDA /* ClimateCombatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E697A2E925CC3698009F1DDA /* ClimateCombatTests.swift */; };
 		E697A2F525CC3698009F1DDA /* ClimateCombatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E697A2F425CC3698009F1DDA /* ClimateCombatUITests.swift */; };
+		E697A30625CC37DE009F1DDA /* ClimateCombatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E697A30525CC37DE009F1DDA /* ClimateCombatViewModel.swift */; };
+		E697A30E25CC3C27009F1DDA /* WeatherInfoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E697A30D25CC3C27009F1DDA /* WeatherInfoProvider.swift */; };
+		E697A31325CC3DA2009F1DDA /* APISessionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E697A31225CC3DA2009F1DDA /* APISessionProvider.swift */; };
+		E697A31825CC3DF9009F1DDA /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E697A31725CC3DF9009F1DDA /* Endpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +49,10 @@
 		E697A2F025CC3698009F1DDA /* ClimateCombatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClimateCombatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E697A2F425CC3698009F1DDA /* ClimateCombatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimateCombatUITests.swift; sourceTree = "<group>"; };
 		E697A2F625CC3698009F1DDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E697A30525CC37DE009F1DDA /* ClimateCombatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimateCombatViewModel.swift; sourceTree = "<group>"; };
+		E697A30D25CC3C27009F1DDA /* WeatherInfoProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInfoProvider.swift; sourceTree = "<group>"; };
+		E697A31225CC3DA2009F1DDA /* APISessionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISessionProvider.swift; sourceTree = "<group>"; };
+		E697A31725CC3DF9009F1DDA /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +105,10 @@
 			children = (
 				E697A2D725CC3695009F1DDA /* ClimateCombatApp.swift */,
 				E697A2D925CC3695009F1DDA /* ContentView.swift */,
+				E697A30525CC37DE009F1DDA /* ClimateCombatViewModel.swift */,
+				E697A30D25CC3C27009F1DDA /* WeatherInfoProvider.swift */,
+				E697A31225CC3DA2009F1DDA /* APISessionProvider.swift */,
+				E697A31725CC3DF9009F1DDA /* Endpoint.swift */,
 				E697A2DB25CC3698009F1DDA /* Assets.xcassets */,
 				E697A2E025CC3698009F1DDA /* Info.plist */,
 				E697A2DD25CC3698009F1DDA /* Preview Content */,
@@ -259,8 +271,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E697A30625CC37DE009F1DDA /* ClimateCombatViewModel.swift in Sources */,
 				E697A2DA25CC3695009F1DDA /* ContentView.swift in Sources */,
 				E697A2D825CC3695009F1DDA /* ClimateCombatApp.swift in Sources */,
+				E697A30E25CC3C27009F1DDA /* WeatherInfoProvider.swift in Sources */,
+				E697A31825CC3DF9009F1DDA /* Endpoint.swift in Sources */,
+				E697A31325CC3DA2009F1DDA /* APISessionProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
