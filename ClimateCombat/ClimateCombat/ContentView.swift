@@ -17,6 +17,7 @@ struct ContentView: View {
                 .padding()
             Text("Malmo: \(viewModel.malmo.grade)")
                 .padding()
+            Text(viewModel.score)
         }
         .onAppear(perform: {
             // TODO: this should actually happen in the background every day
