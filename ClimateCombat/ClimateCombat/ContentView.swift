@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 struct ContentView: View {
     @ObservedObject var viewModel = ClimateCombatViewModel()
@@ -18,6 +19,7 @@ struct ContentView: View {
                 .padding()
         }
         .onAppear(perform: {
+            // TODO: this should actually happen in the background every day
             viewModel.getWeatherInfo()
         })
     }

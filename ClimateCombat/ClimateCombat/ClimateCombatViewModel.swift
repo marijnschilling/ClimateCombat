@@ -15,7 +15,7 @@ class ClimateCombatViewModel: ObservableObject {
     @Published var malmo = WeatherInfo()
     @Published var amsterdam = WeatherInfo()
     
-    private let weatherInfoProvider = WeatherInfoProvider(apiSession: APISession())
+    private let weatherInfoProvider = WeatherInfoProvider()
     
     var cancellableMalmo: AnyCancellable?
     var cancellableAmsterdam: AnyCancellable?
@@ -24,14 +24,12 @@ class ClimateCombatViewModel: ObservableObject {
         cancellableMalmo = weatherInfoProvider.getMalmoWeatherInfo().sink(receiveValue: { malmo in
             DispatchQueue.main.async {
                 self.malmo = malmo
-                print("hoooooi")
             }
         })
         
         cancellableAmsterdam = weatherInfoProvider.getAmsterdamWeatherInfo().sink(receiveValue: { amsterdam in
             DispatchQueue.main.async {
                 self.amsterdam = amsterdam
-                print("hoooooi")
             }
         })
     }
