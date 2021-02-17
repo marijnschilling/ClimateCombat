@@ -30,8 +30,10 @@ class ClimateCombatViewModel: ObservableObject {
                     
                     if amsterdam.grade > malmo.grade {
                         UserDefaults.standard.amsterdamScore = UserDefaults.standard.amsterdamScore + 1
-                    } else {
+                    } else if malmo.grade > amsterdam.grade {
                         UserDefaults.standard.malmoScore = UserDefaults.standard.malmoScore + 1
+                    } else {
+                        // it's a draw
                     }
                     
                     self.score = "Amsterdam: \(UserDefaults.standard.amsterdamScore) Malmo: \(UserDefaults.standard.malmoScore)"
