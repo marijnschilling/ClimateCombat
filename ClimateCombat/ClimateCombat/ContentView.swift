@@ -11,6 +11,8 @@ import Combine
 struct ContentView: View {
     @ObservedObject var viewModel = ClimateCombatViewModel()
     
+    var cancellable: AnyCancellable?
+    
     var body: some View {
         VStack {
             Text("Amsterdam: \(viewModel.amsterdam.grade)")
@@ -20,8 +22,11 @@ struct ContentView: View {
             Text(viewModel.score)
         }
         .onAppear(perform: {
-            // TODO: this should actually happen in the background every day
             viewModel.getWeatherInfo()
+            
+            cancellable = UserDefaults.standard
+                .publisher(for: \.scores)
+                .sink { _ in }
         })
     }
 }

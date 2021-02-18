@@ -22,23 +22,26 @@ class ClimateCombatViewModel: ObservableObject {
     var cancellableAmsterdam: AnyCancellable?
     
     func getWeatherInfo() {
-        cancellableMalmo = weatherInfoProvider.getMalmoWeatherInfo().sink(receiveValue: { malmo in
-            self.cancellableAmsterdam = self.weatherInfoProvider.getAmsterdamWeatherInfo().sink(receiveValue: { amsterdam in
-                DispatchQueue.main.async {
-                    self.amsterdam = amsterdam
-                    self.malmo = malmo
-                    
-                    if amsterdam.grade > malmo.grade {
-                        UserDefaults.standard.amsterdamScore = UserDefaults.standard.amsterdamScore + 1
-                    } else if malmo.grade > amsterdam.grade {
-                        UserDefaults.standard.malmoScore = UserDefaults.standard.malmoScore + 1
-                    } else {
-                        // it's a draw
-                    }
-                    
-                    self.score = "Amsterdam: \(UserDefaults.standard.amsterdamScore) Malmo: \(UserDefaults.standard.malmoScore)"
-                }
-            })
+        cancellableMalmo = weatherInfoProvider.getMalmoWeatherInfo().sink(receiveValue: { [weak self] malmo in
+            self?.add(score: malmo.grade, for: .malmo)
+            
         })
+        cancellableAmsterdam = self.weatherInfoProvider.getAmsterdamWeatherInfo().sink(receiveValue: { [weak self] amsterdam in
+            self?.add(score: amsterdam.grade, for: .amsterdam)
+        })
+    }
+    
+    private func add(score: String, for city: City) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        let currentDateString = dateFormatter.string(from: Date())
+        
+        var scores = UserDefaults.standard.scores ?? [String: [String: String]]() // get scores dictionary or create an empty one
+        var scoreForDate = scores[currentDateString] ?? [String: String]() // get the score for the date, or create a new dictionary
+        
+        scoreForDate[city.rawValue] = score // Set (or override) the date score for the city
+        scores[currentDateString] = scoreForDate // Set (or override) the scores for the date
+        
+        UserDefaults.standard.scores = scores // Set (or override) the scores
     }
 }

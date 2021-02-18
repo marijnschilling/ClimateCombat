@@ -7,22 +7,18 @@
 
 import Foundation
 
+enum City: String, Codable {
+    case amsterdam
+    case malmo
+}
+
 extension UserDefaults {
-    @objc var amsterdamScore: Int {
+    @objc var scores: [String: [String: String]]? {
         get {
-            return integer(forKey: "amsterdamScore")
+            return dictionary(forKey: "climateScores") as? [String: [String: String]]
         }
         set {
-            set(newValue, forKey: "amsterdamScore")
-        }
-    }
-    
-    @objc var malmoScore: Int {
-        get {
-            return integer(forKey: "malmoScore")
-        }
-        set {
-            set(newValue, forKey: "malmoScore")
+            set(newValue, forKey: "climateScores")
         }
     }
 }
