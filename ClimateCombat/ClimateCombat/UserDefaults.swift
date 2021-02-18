@@ -10,6 +10,13 @@ import Foundation
 enum City: String, Codable {
     case amsterdam
     case malmo
+    
+    var coolName: String {
+        switch self {
+        case .amsterdam: return "AMS"
+        case .malmo: return "MMX"
+        }
+    }
 }
 
 extension UserDefaults {
