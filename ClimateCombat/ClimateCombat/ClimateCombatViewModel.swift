@@ -21,16 +21,36 @@ class ClimateCombatViewModel: ObservableObject {
     var cancellableMalmo: AnyCancellable?
     var cancellableAmsterdam: AnyCancellable?
     
+    var cancellableScore: AnyCancellable?
+    
     func getWeatherInfo() {
         cancellableMalmo = weatherInfoProvider.getMalmoWeatherInfo().sink(receiveValue: { [weak self] malmo in
             self?.add(score: malmo.grade, for: .malmo)
-            
+            DispatchQueue.main.async {
+                self?.malmo = malmo
+            }
         })
+        
         cancellableAmsterdam = self.weatherInfoProvider.getAmsterdamWeatherInfo().sink(receiveValue: { [weak self] amsterdam in
             self?.add(score: amsterdam.grade, for: .amsterdam)
+            DispatchQueue.main.async {
+                self?.amsterdam = amsterdam
+            }
         })
+        
+        cancellableScore = UserDefaults.standard
+            .publisher(for: \.scores)
+            .sink() { [weak self] scores in
+                self?.score = self?.scoreString(for: scores) ?? ""
+            }
     }
     
+    private func scoreString(for: [String: [String: String]]?) -> String {
+        // Get a string from the scores "M 4-9 A"
+        return ""
+    }
+    
+    // Should this function be part of this ViewModel?
     private func add(score: String, for city: City) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .short
