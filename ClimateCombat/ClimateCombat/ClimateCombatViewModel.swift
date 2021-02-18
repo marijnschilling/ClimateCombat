@@ -26,14 +26,14 @@ class ClimateCombatViewModel: ObservableObject {
     func getWeatherInfo() {
         cancellableMalmo = weatherInfoProvider.getMalmoWeatherInfo().sink(receiveValue: { [weak self] malmo in
             DispatchQueue.main.async {
-//                self?.add(score: malmo.grade, for: .malmo)
+                self?.addGradeToUserDefaults(malmo.grade, for: .malmo)
                 self?.malmo = malmo
             }
         })
         
         cancellableAmsterdam = self.weatherInfoProvider.getAmsterdamWeatherInfo().sink(receiveValue: { [weak self] amsterdam in
             DispatchQueue.main.async {
-//                self?.add(score: amsterdam.grade, for: .amsterdam)
+                self?.addGradeToUserDefaults(amsterdam.grade, for: .amsterdam)
                 self?.amsterdam = amsterdam
             }
         })
@@ -41,7 +41,13 @@ class ClimateCombatViewModel: ObservableObject {
         cancellableScore = UserDefaults.standard
             .publisher(for: \.scores)
             .sink() { [weak self] scores in
-//                self?.score = self?.scoreString(for: scores) ?? ""
+                self?.score = scores?.scoreString ?? ""
             }
+    }
+    
+    private func addGradeToUserDefaults(_ grade: String, for city: City) {
+        let scores = UserDefaults.standard.scores
+        scores?.add(grade: grade, for: city)
+        UserDefaults.standard.scores = scores
     }
 }

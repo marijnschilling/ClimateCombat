@@ -7,51 +7,54 @@
 
 import Foundation
 
-struct Score: Decodable {
+struct Score: Codable {
     let totalAmsterdam: Int
     let totalMalmo: Int
 }
 
-struct Scores: Decodable {
-    let date: Date
+@objc class Scores: NSObject, Codable {
+    var date: Date
     var amsterdamGrade: String?
     var malmoGrade: String?
     var overallScore: Score
     
-    var scoreString: String {
-        return ""
+    init(date: Date = Date(), amsterdamGrade: String? = nil, malmoGrade: String? = nil, overallScore: Score = Score(totalAmsterdam: 0, totalMalmo: 0)) {
+        self.date = date
+        self.amsterdamGrade = amsterdamGrade
+        self.malmoGrade = malmoGrade
+        self.overallScore = overallScore
     }
     
-    func add(grade: String, for city: City, on date: Date = Date()) -> Scores {
-        var newMalmoGrade = malmoGrade
-        var newAmsterdamGrade = amsterdamGrade
-        
+    var scoreString: String {
+        return "MXX: \(overallScore.totalMalmo): \(overallScore.totalAmsterdam) AMS"
+    }
+    
+    func add(grade: String, for city: City, on date: Date = Date()) {
+        if date != self.date {
+            self.date = date
+            malmoGrade = nil
+            amsterdamGrade = nil
+        }
         // is theres already a score for this date for this city? Do nothing return!
         // else if there's already a score for this date for the other city update the TotalScore
         // set the score for this date for this city
         switch city {
         case .malmo:
-            newMalmoGrade = grade
+            if malmoGrade != nil { return }
+            malmoGrade = grade
         case .amsterdam:
-            newAmsterdamGrade = grade
+            if amsterdamGrade != nil { return }
+            amsterdamGrade = grade
         }
         
-        guard let amsterdamGrade = newAmsterdamGrade,
-           let malmoGrade = newMalmoGrade else {
-            return Scores(date: date, amsterdamGrade: newAmsterdamGrade, malmoGrade: newMalmoGrade, overallScore: overallScore)
-        }
+        guard let amsterdamGrade = amsterdamGrade, let malmoGrade = malmoGrade else { return }
         
-        
-        var newOverallScore: Score
         if amsterdamGrade > malmoGrade {
-            newOverallScore = Score(totalAmsterdam: overallScore.totalAmsterdam + 1, totalMalmo: overallScore.totalMalmo)
+            overallScore = Score(totalAmsterdam: overallScore.totalAmsterdam + 1, totalMalmo: overallScore.totalMalmo)
         } else if malmoGrade > amsterdamGrade {
-            newOverallScore = Score(totalAmsterdam: overallScore.totalAmsterdam, totalMalmo: overallScore.totalMalmo + 1)
-        } else {
-            newOverallScore = overallScore // it's a draw!
-        }
+            overallScore = Score(totalAmsterdam: overallScore.totalAmsterdam, totalMalmo: overallScore.totalMalmo + 1)
+        } 
         
-        return Scores(date: date, amsterdamGrade: newAmsterdamGrade, malmoGrade: newMalmoGrade, overallScore: newOverallScore)
-        
+        return
     }
 }

@@ -20,12 +20,17 @@ enum City: String, Codable {
 }
 
 extension UserDefaults {
-    @objc var scores: [String: [String: String]]? {
+    @objc var scores: Scores? {
         get {
-            return dictionary(forKey: "climateScores") as? [String: [String: String]]
+            if let data = UserDefaults.standard.object(forKey: "climateScores") as? Data {
+                return try? JSONDecoder().decode(Scores.self, from: data)
+            }
+            return nil
         }
         set {
-            set(newValue, forKey: "climateScores")
+            if let encoded = try? JSONEncoder().encode(newValue) {
+               UserDefaults.standard.set(encoded, forKey: "climateScores")
+            }
         }
     }
 }
