@@ -40,7 +40,7 @@ class WeatherInfoProvider: WeatherInfoProviding {
         var grade = "?"
         if let range = htmlString.range(of: "<img alt=\"grade_") {
             let substring = htmlString[range.upperBound...]
-            grade = String(substring.first ?? "?") //TODO: make it work for 10 :) 0 == 10?
+            grade = String(substring.first ?? "?") //TODO: make it work for 10 :) 
         }
         
         var imageName: String?

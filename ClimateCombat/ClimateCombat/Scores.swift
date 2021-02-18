@@ -26,25 +26,32 @@ struct Score: Codable {
     }
     
     var scoreString: String {
-        return "MXX: \(overallScore.totalMalmo): \(overallScore.totalAmsterdam) AMS"
+        return "MXX: \(overallScore.totalMalmo) : \(overallScore.totalAmsterdam) AMS"
     }
     
+    lazy var dateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        return dateFormatter
+    }()
+    
     func add(grade: String, for city: City, on date: Date = Date()) {
-        if date != self.date {
+        // Use better check for the same day
+        if dateFormatter.string(from: date) != dateFormatter.string(from: self.date){
             self.date = date
-            malmoGrade = nil
             amsterdamGrade = nil
+            malmoGrade = nil
         }
         // is theres already a score for this date for this city? Do nothing return!
         // else if there's already a score for this date for the other city update the TotalScore
         // set the score for this date for this city
         switch city {
-        case .malmo:
-            if malmoGrade != nil { return }
-            malmoGrade = grade
         case .amsterdam:
             if amsterdamGrade != nil { return }
             amsterdamGrade = grade
+        case .malmo:
+            if malmoGrade != nil { return }
+            malmoGrade = grade
         }
         
         guard let amsterdamGrade = amsterdamGrade, let malmoGrade = malmoGrade else { return }
