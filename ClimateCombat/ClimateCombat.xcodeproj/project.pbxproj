@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E697A2D825CC3695009F1DDA /* ClimateCombatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E697A2D725CC3695009F1DDA /* ClimateCombatApp.swift */; };
-		E697A2DA25CC3695009F1DDA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E697A2D925CC3695009F1DDA /* ContentView.swift */; };
+		E697A2DA25CC3695009F1DDA /* ClimateCombatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E697A2D925CC3695009F1DDA /* ClimateCombatView.swift */; };
 		E697A2DC25CC3698009F1DDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E697A2DB25CC3698009F1DDA /* Assets.xcassets */; };
 		E697A2DF25CC3698009F1DDA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E697A2DE25CC3698009F1DDA /* Preview Assets.xcassets */; };
 		E697A2EA25CC3698009F1DDA /* ClimateCombatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E697A2E925CC3698009F1DDA /* ClimateCombatTests.swift */; };
@@ -40,7 +40,7 @@
 /* Begin PBXFileReference section */
 		E697A2D425CC3695009F1DDA /* ClimateCombat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClimateCombat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E697A2D725CC3695009F1DDA /* ClimateCombatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimateCombatApp.swift; sourceTree = "<group>"; };
-		E697A2D925CC3695009F1DDA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E697A2D925CC3695009F1DDA /* ClimateCombatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimateCombatView.swift; sourceTree = "<group>"; };
 		E697A2DB25CC3698009F1DDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E697A2DE25CC3698009F1DDA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E697A2E025CC3698009F1DDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -105,16 +105,12 @@
 		E697A2D625CC3695009F1DDA /* ClimateCombat */ = {
 			isa = PBXGroup;
 			children = (
-				E697A2D725CC3695009F1DDA /* ClimateCombatApp.swift */,
-				E697A2D925CC3695009F1DDA /* ContentView.swift */,
+				E6C8302625E25E6800A6CA53 /* App */,
+				E6C8302525E25DE000A6CA53 /* Persistence */,
+				E6C8302125E25BD000A6CA53 /* Networking */,
+				E697A2D925CC3695009F1DDA /* ClimateCombatView.swift */,
 				E697A30525CC37DE009F1DDA /* ClimateCombatViewModel.swift */,
-				E697A32725DA7001009F1DDA /* UserDefaults.swift */,
-				E697A30D25CC3C27009F1DDA /* WeatherInfoProvider.swift */,
-				E697A31725CC3DF9009F1DDA /* Endpoint.swift */,
-				E697A2DB25CC3698009F1DDA /* Assets.xcassets */,
-				E697A2E025CC3698009F1DDA /* Info.plist */,
 				E697A2DD25CC3698009F1DDA /* Preview Content */,
-				E6BA1C6525DE895E00D648E1 /* Scores.swift */,
 			);
 			path = ClimateCombat;
 			sourceTree = "<group>";
@@ -143,6 +139,34 @@
 				E697A2F625CC3698009F1DDA /* Info.plist */,
 			);
 			path = ClimateCombatUITests;
+			sourceTree = "<group>";
+		};
+		E6C8302125E25BD000A6CA53 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				E697A31725CC3DF9009F1DDA /* Endpoint.swift */,
+				E697A30D25CC3C27009F1DDA /* WeatherInfoProvider.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		E6C8302525E25DE000A6CA53 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				E6BA1C6525DE895E00D648E1 /* Scores.swift */,
+				E697A32725DA7001009F1DDA /* UserDefaults.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		E6C8302625E25E6800A6CA53 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				E697A2E025CC3698009F1DDA /* Info.plist */,
+				E697A2DB25CC3698009F1DDA /* Assets.xcassets */,
+				E697A2D725CC3695009F1DDA /* ClimateCombatApp.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,7 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E697A30625CC37DE009F1DDA /* ClimateCombatViewModel.swift in Sources */,
-				E697A2DA25CC3695009F1DDA /* ContentView.swift in Sources */,
+				E697A2DA25CC3695009F1DDA /* ClimateCombatView.swift in Sources */,
 				E697A32825DA7001009F1DDA /* UserDefaults.swift in Sources */,
 				E6BA1C6625DE895E00D648E1 /* Scores.swift in Sources */,
 				E697A2D825CC3695009F1DDA /* ClimateCombatApp.swift in Sources */,
@@ -441,7 +465,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ClimateCombat/Preview Content\"";
 				DEVELOPMENT_TEAM = MF2767WRK3;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = ClimateCombat/Info.plist;
+				INFOPLIST_FILE = ClimateCombat/App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -463,7 +487,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ClimateCombat/Preview Content\"";
 				DEVELOPMENT_TEAM = MF2767WRK3;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = ClimateCombat/Info.plist;
+				INFOPLIST_FILE = ClimateCombat/App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

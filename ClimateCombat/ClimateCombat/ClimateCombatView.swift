@@ -8,7 +8,7 @@
 import SwiftUI
 import Combine
 
-struct ContentView: View {
+struct ClimateCombatView: View {
     @ObservedObject var viewModel = ClimateCombatViewModel()
     
     var body: some View {
@@ -25,8 +25,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct ClimateCombatPreviews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ClimateCombatView()
     }
 }

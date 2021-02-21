@@ -14,6 +14,7 @@ struct WeatherInfo: Decodable {
 class ClimateCombatViewModel: ObservableObject {
     @Published var amsterdam = WeatherInfo()
     @Published var malmo = WeatherInfo()
+    
     @Published var score = ""
     
     private let weatherInfoProvider = WeatherInfoProvider()

@@ -7,6 +7,11 @@
 
 import Foundation
 
+enum City: String, Codable {
+    case amsterdam
+    case malmo
+}
+
 struct Score: Codable {
     let totalAmsterdam: Int
     let totalMalmo: Int
@@ -26,7 +31,7 @@ struct Score: Codable {
     }
     
     var scoreString: String {
-        return "MXX: \(overallScore.totalMalmo) : \(overallScore.totalAmsterdam) AMS"
+        return "MXX \(overallScore.totalMalmo) : \(overallScore.totalAmsterdam) AMS"
     }
     
     lazy var dateFormatter: DateFormatter = {
@@ -42,7 +47,7 @@ struct Score: Codable {
             amsterdamGrade = nil
             malmoGrade = nil
         }
-        // is theres already a score for this date for this city? Do nothing return!
+        // if there is already a score for this date for this city? Do nothing return!
         // else if there's already a score for this date for the other city update the TotalScore
         // set the score for this date for this city
         switch city {
