@@ -18,15 +18,11 @@ struct Score: Codable {
 }
 
 @objc class Scores: NSObject, Codable {
-    var date: Date
-    var amsterdamGrade: Int?
-    var malmoGrade: Int?
+    var date: Date?
     var overallScore: Score
     
-    init(date: Date = Date(), amsterdamGrade: Int? = 0, malmoGrade: Int? = 0, overallScore: Score = Score(totalAmsterdam: 0, totalMalmo: 0)) {
+    init(date: Date? = nil, overallScore: Score = Score(totalAmsterdam: 0, totalMalmo: 0)) {
         self.date = date
-        self.amsterdamGrade = amsterdamGrade
-        self.malmoGrade = malmoGrade
         self.overallScore = overallScore
     }
     
@@ -40,33 +36,20 @@ struct Score: Codable {
         return dateFormatter
     }()
     
-    func add(grade: Int, for city: City, on date: Date = Date()) {
-        // Use better check for the same day
-        if dateFormatter.string(from: date) != dateFormatter.string(from: self.date){
-            self.date = date
-            amsterdamGrade = nil
-            malmoGrade = nil
+    func incrementScore(for city: City, on date: Date = Date()) {
+        guard self.date == nil || !Calendar.current.isDate(date, inSameDayAs: self.date!) else {
+            return
         }
-        // if there is already a score for this date for this city? Do nothing return!
-        // else if there's already a score for this date for the other city update the TotalScore
-        // set the score for this date for this city
+        
+        self.date = date
+        
         switch city {
         case .amsterdam:
-            if amsterdamGrade != nil { return }
-            amsterdamGrade = grade
-        case .malmo:
-            if malmoGrade != nil { return }
-            malmoGrade = grade
-        }
-        
-        guard let amsterdamGrade = amsterdamGrade, let malmoGrade = malmoGrade else { return }
-        
-        if amsterdamGrade > malmoGrade {
             overallScore = Score(totalAmsterdam: overallScore.totalAmsterdam + 1, totalMalmo: overallScore.totalMalmo)
-        } else if malmoGrade > amsterdamGrade {
+        case .malmo:
             overallScore = Score(totalAmsterdam: overallScore.totalAmsterdam, totalMalmo: overallScore.totalMalmo + 1)
-        } 
-        
+        }
+
         return
     }
 }

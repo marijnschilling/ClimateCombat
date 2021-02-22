@@ -27,17 +27,13 @@ class ClimateCombatViewModel: ObservableObject {
     func getWeatherInfo() {
         
         cancellableAmsterdam = self.weatherInfoProvider.getAmsterdamWeatherInfo().sink(receiveValue: { [weak self] amsterdam in
-            DispatchQueue.main.async {
-                self?.addGradeToUserDefaults(amsterdam.grade, for: .amsterdam)
-                self?.amsterdam = amsterdam
-            }
-        })
-        
-        cancellableMalmo = weatherInfoProvider.getMalmoWeatherInfo().sink(receiveValue: { [weak self] malmo in
-            DispatchQueue.main.async {
-                self?.addGradeToUserDefaults(malmo.grade, for: .malmo)
-                self?.malmo = malmo
-            }
+            self?.cancellableMalmo = self?.weatherInfoProvider.getMalmoWeatherInfo().sink(receiveValue: { [weak self] malmo in
+                DispatchQueue.main.async {
+                    self?.addGradeToUserDefaults(amsterdam: amsterdam.grade, malmo: malmo.grade)
+                    self?.malmo = malmo
+                    self?.amsterdam = amsterdam
+                }
+            })
         })
         
         cancellableScore = UserDefaults.standard
@@ -47,9 +43,15 @@ class ClimateCombatViewModel: ObservableObject {
             }
     }
     
-    private func addGradeToUserDefaults(_ grade: Int, for city: City) {
+    private func addGradeToUserDefaults(amsterdam: Int, malmo: Int) {
         let scores = UserDefaults.standard.scores ?? Scores()
-        scores.add(grade: grade, for: city)
+        
+        if amsterdam > malmo {
+            scores.incrementScore(for: .amsterdam)
+        } else if malmo > amsterdam {
+            scores.incrementScore(for: .malmo)
+        }
+
         UserDefaults.standard.scores = scores
     }
 }
