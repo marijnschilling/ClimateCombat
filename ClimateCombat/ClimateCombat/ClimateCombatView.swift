@@ -56,7 +56,6 @@ struct ClimateCombatView: View {
             Image(viewModel.dayWinner.rawValue)
                 .resizable()
                 .frame(maxHeight: .infinity)
-                .animation(.easeIn)
         )
         .frame(maxHeight: .infinity)
         .onAppear(perform: {

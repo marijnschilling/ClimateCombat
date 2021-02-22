@@ -35,7 +35,7 @@ enum WeatherImage: String {
         case .sunny_cold:
             return "sun.min"
         case .unknown:
-            return "questionmark.circle"
+            return "line.3.crossed.swirl.circle.fill"
         }
     }
 }
