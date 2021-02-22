@@ -27,7 +27,7 @@ struct Score: Codable {
     }
     
     var scoreString: String {
-        return "\(overallScore.totalMalmo) : \(overallScore.totalAmsterdam)"
+        return "\(overallScore.totalAmsterdam) : \(overallScore.totalMalmo)"
     }
     
     lazy var dateFormatter: DateFormatter = {

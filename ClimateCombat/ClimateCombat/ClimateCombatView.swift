@@ -15,17 +15,28 @@ struct ClimateCombatView: View {
         VStack {
             VStack() {
                 Text("Total")
-                    .bold()
+                    .font(.headline)
                 HStack(spacing: 50) {
-                    Text("MMÖ")
-                    Text(viewModel.score)
                     Text("AMS")
+                        .font(.body)
+                    Text(viewModel.score)
+                        .font(.body)
+                    Text("MMÖ")
+                        .font(.body)
                 }
             }
             Spacer()
-            
-            Text("Amsterdam: \(viewModel.amsterdam.grade)")
-            Text("Malmo: \(viewModel.malmo.grade)")
+            Image(systemName: viewModel.amsterdam.image.systemName)
+            Image(systemName: viewModel.malmo.image.systemName)
+            HStack {
+                Spacer()
+                Text("\(viewModel.amsterdam.grade)")
+                    .font(.largeTitle)
+                Spacer()
+                Text("\(viewModel.malmo.grade)")
+                    .font(.largeTitle)
+                Spacer()
+            }
             Spacer()
         }
         .frame(maxHeight: .infinity)

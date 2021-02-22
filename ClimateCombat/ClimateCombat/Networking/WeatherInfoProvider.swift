@@ -11,7 +11,7 @@ class WeatherInfoProvider: WeatherInfoProviding {
         return execute(Endpoint.amsterdam)
             .catch { error in
                 //TODO: Handle errors properly
-                return Just(WeatherInfo(grade: 0, imageName: nil))
+                return Just(WeatherInfo(grade: 0, imageName: ""))
             }.eraseToAnyPublisher()
     }
     
@@ -20,7 +20,7 @@ class WeatherInfoProvider: WeatherInfoProviding {
         return execute(Endpoint.malmo)
             .catch { error in
                 //TODO: Handle errors properly
-                return Just(WeatherInfo(grade: 0, imageName: nil))
+                return Just(WeatherInfo(grade: 0, imageName: ""))
             }.eraseToAnyPublisher()
     }
     
@@ -46,7 +46,7 @@ class WeatherInfoProvider: WeatherInfoProviding {
             }
         }
         
-        var imageName: String?
+        var imageName = ""
         if let range = htmlString.range(of: "weatherSymbol\":{\"bgCode\":\"") {
             let string = String(htmlString[range.upperBound...])
             if let imageNameRange = string.range(of: "\"") {

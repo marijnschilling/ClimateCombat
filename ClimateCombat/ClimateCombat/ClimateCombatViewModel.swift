@@ -1,13 +1,51 @@
 import Foundation
 import Combine
 
-struct WeatherInfo: Decodable {
-    let grade: Int
-    let imageName: String?
+enum WeatherImage: String {
+    case snow_cloudy
+    case cloudy
+    case cloudy_sunny_cold
+    case raining
+    case fresh_breeze
+    case super_cold
+    case super_hot
+    case cloudy_sunny_warm
+    case sunny_cold
+    case unknown
     
-    init(grade: Int = 0, imageName: String? = nil) {
+    var systemName: String {
+        switch self {
+        case .snow_cloudy:
+            return "cloud.snow"
+        case .cloudy:
+            return "cloud"
+        case .cloudy_sunny_cold:
+            return "cloud.sun"
+        case .raining:
+            return "cloud.rain"
+        case .fresh_breeze:
+            return "wind"
+        case .super_cold:
+            return "thermometer.snowflake"
+        case .super_hot:
+            return "thermometer.sun"
+        case .cloudy_sunny_warm:
+            return "sun.max"
+        case .sunny_cold:
+            return "sun.min"
+        case .unknown:
+            return "questionmark.circle"
+        }
+    }
+}
+
+struct WeatherInfo {
+    let grade: Int
+    let image: WeatherImage
+    
+    init(grade: Int = 0, imageName: String = "") {
         self.grade = grade
-        self.imageName = imageName
+        self.image = WeatherImage(rawValue: imageName) ?? .unknown
     }
 }
 
