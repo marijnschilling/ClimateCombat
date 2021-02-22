@@ -1,5 +1,6 @@
 import Foundation
 import Combine
+import SwiftUI
 
 enum WeatherImage: String {
     case snow_cloudy
@@ -49,11 +50,18 @@ struct WeatherInfo {
     }
 }
 
+enum DayWinner: String {
+    case amsterdam
+    case malmo
+    case draw
+}
+
 class ClimateCombatViewModel: ObservableObject {
     @Published var amsterdam = WeatherInfo()
     @Published var malmo = WeatherInfo()
     
     @Published var score = ""
+    @Published var dayWinner = DayWinner.draw
     
     private let weatherInfoProvider = WeatherInfoProvider()
 
@@ -67,7 +75,16 @@ class ClimateCombatViewModel: ObservableObject {
         cancellableAmsterdam = self.weatherInfoProvider.getAmsterdamWeatherInfo().sink(receiveValue: { [weak self] amsterdam in
             self?.cancellableMalmo = self?.weatherInfoProvider.getMalmoWeatherInfo().sink(receiveValue: { [weak self] malmo in
                 DispatchQueue.main.async {
-                    self?.addGradeToUserDefaults(amsterdam: amsterdam.grade, malmo: malmo.grade)
+                    if amsterdam.grade > malmo.grade {
+                        self?.incrementScoreInUserDefaults(for: .amsterdam)
+                        self?.dayWinner = .amsterdam
+                    } else if malmo.grade > amsterdam.grade {
+                        self?.incrementScoreInUserDefaults(for: .malmo)
+                        self?.dayWinner = .malmo
+                    } else {
+                        self?.dayWinner = .draw
+                    }
+                    
                     self?.malmo = malmo
                     self?.amsterdam = amsterdam
                 }
@@ -81,15 +98,9 @@ class ClimateCombatViewModel: ObservableObject {
             }
     }
     
-    private func addGradeToUserDefaults(amsterdam: Int, malmo: Int) {
+    private func incrementScoreInUserDefaults(for city: City) {
         let scores = UserDefaults.standard.scores ?? Scores()
-        
-        if amsterdam > malmo {
-            scores.incrementScore(for: .amsterdam)
-        } else if malmo > amsterdam {
-            scores.incrementScore(for: .malmo)
-        }
-
+        scores.incrementScore(for: city)
         UserDefaults.standard.scores = scores
     }
 }

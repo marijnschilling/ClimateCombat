@@ -1,0 +1,15 @@
+{
+  "images" : [
+    {
+      "filename" : "CC_BG_MMO.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "preserves-vector-representation" : true
+  }
+}

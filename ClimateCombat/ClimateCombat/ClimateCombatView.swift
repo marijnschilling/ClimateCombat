@@ -10,6 +10,7 @@ import Combine
 
 struct ClimateCombatView: View {
     @ObservedObject var viewModel = ClimateCombatViewModel()
+    @State var imageName = "draw"
     
     var body: some View {
         VStack {
@@ -21,7 +22,7 @@ struct ClimateCombatView: View {
                     Text("AMS")
                         .font(.title)
                     Text(viewModel.score)
-                        .font(.body)
+                        .font(.title)
                     Text("MMÖ")
                         .font(.title)
                 }
@@ -51,6 +52,12 @@ struct ClimateCombatView: View {
             }
             Spacer()
         }
+        .background(
+            Image(viewModel.dayWinner.rawValue)
+                .resizable()
+                .frame(maxHeight: .infinity)
+                .animation(.easeIn)
+        )
         .frame(maxHeight: .infinity)
         .onAppear(perform: {
             viewModel.getWeatherInfo()
@@ -60,6 +67,8 @@ struct ClimateCombatView: View {
 
 struct ClimateCombatPreviews: PreviewProvider {
     static var previews: some View {
-        ClimateCombatView()
+        Group {
+            ClimateCombatView()
+        }
     }
 }
