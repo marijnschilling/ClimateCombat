@@ -2,10 +2,10 @@ import Foundation
 import Combine
 
 struct WeatherInfo: Decodable {
-    let grade: String
+    let grade: Int
     let imageName: String?
     
-    init(grade: String = "", imageName: String? = nil) {
+    init(grade: Int = 0, imageName: String? = nil) {
         self.grade = grade
         self.imageName = imageName
     }
@@ -47,7 +47,7 @@ class ClimateCombatViewModel: ObservableObject {
             }
     }
     
-    private func addGradeToUserDefaults(_ grade: String, for city: City) {
+    private func addGradeToUserDefaults(_ grade: Int, for city: City) {
         let scores = UserDefaults.standard.scores ?? Scores()
         scores.add(grade: grade, for: city)
         UserDefaults.standard.scores = scores

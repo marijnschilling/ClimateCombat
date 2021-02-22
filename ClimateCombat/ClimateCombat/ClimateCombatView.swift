@@ -13,12 +13,22 @@ struct ClimateCombatView: View {
     
     var body: some View {
         VStack {
+            VStack() {
+                Text("Total")
+                    .bold()
+                HStack(spacing: 50) {
+                    Text("MMÖ")
+                    Text(viewModel.score)
+                    Text("AMS")
+                }
+            }
+            Spacer()
+            
             Text("Amsterdam: \(viewModel.amsterdam.grade)")
-                .padding()
             Text("Malmo: \(viewModel.malmo.grade)")
-                .padding()
-            Text(viewModel.score)
+            Spacer()
         }
+        .frame(maxHeight: .infinity)
         .onAppear(perform: {
             viewModel.getWeatherInfo()
         })

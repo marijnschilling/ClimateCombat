@@ -11,7 +11,7 @@ class WeatherInfoProvider: WeatherInfoProviding {
         return execute(Endpoint.amsterdam)
             .catch { error in
                 //TODO: Handle errors properly
-                return Just(WeatherInfo(grade: "?", imageName: nil))
+                return Just(WeatherInfo(grade: 0, imageName: nil))
             }.eraseToAnyPublisher()
     }
     
@@ -20,7 +20,7 @@ class WeatherInfoProvider: WeatherInfoProviding {
         return execute(Endpoint.malmo)
             .catch { error in
                 //TODO: Handle errors properly
-                return Just(WeatherInfo(grade: "?", imageName: nil))
+                return Just(WeatherInfo(grade: 0, imageName: nil))
             }.eraseToAnyPublisher()
     }
     
@@ -37,10 +37,13 @@ class WeatherInfoProvider: WeatherInfoProviding {
     private func convert(data: Data) -> WeatherInfo {
         let htmlString = String(decoding: data, as: UTF8.self)
         
-        var grade = "?"
+        var grade = 0
         if let range = htmlString.range(of: "<img alt=\"grade_") {
             let substring = htmlString[range.upperBound...]
-            grade = String(substring.first ?? "?") //TODO: make it work for 10 :) 
+            if let gradeRange = substring.range(of: "\"") {
+                let gradeString = String(substring[...gradeRange.lowerBound].dropLast())
+                grade = Int(gradeString) ?? 0
+            }
         }
         
         var imageName: String?

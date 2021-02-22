@@ -19,11 +19,11 @@ struct Score: Codable {
 
 @objc class Scores: NSObject, Codable {
     var date: Date
-    var amsterdamGrade: String?
-    var malmoGrade: String?
+    var amsterdamGrade: Int?
+    var malmoGrade: Int?
     var overallScore: Score
     
-    init(date: Date = Date(), amsterdamGrade: String? = nil, malmoGrade: String? = nil, overallScore: Score = Score(totalAmsterdam: 0, totalMalmo: 0)) {
+    init(date: Date = Date(), amsterdamGrade: Int? = 0, malmoGrade: Int? = 0, overallScore: Score = Score(totalAmsterdam: 0, totalMalmo: 0)) {
         self.date = date
         self.amsterdamGrade = amsterdamGrade
         self.malmoGrade = malmoGrade
@@ -31,7 +31,7 @@ struct Score: Codable {
     }
     
     var scoreString: String {
-        return "MXX \(overallScore.totalMalmo) : \(overallScore.totalAmsterdam) AMS"
+        return "\(overallScore.totalMalmo) : \(overallScore.totalAmsterdam)"
     }
     
     lazy var dateFormatter: DateFormatter = {
@@ -40,7 +40,7 @@ struct Score: Codable {
         return dateFormatter
     }()
     
-    func add(grade: String, for city: City, on date: Date = Date()) {
+    func add(grade: Int, for city: City, on date: Date = Date()) {
         // Use better check for the same day
         if dateFormatter.string(from: date) != dateFormatter.string(from: self.date){
             self.date = date
